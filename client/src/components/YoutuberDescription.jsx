@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   avatar: {
@@ -28,6 +30,16 @@ let YoutuberDescription = props => {
       <Typography variant="h5">{props.username}</Typography>
       <Typography variant="h5">{props.subscriberCount}</Typography>
       <Typography variant="h5">{props.videoCount}</Typography>
+
+      <button
+        onClick={() => {
+          window.location.href = `https://www.youtube.com/user/${
+            props.customUrl
+          }/`;
+        }}
+      >
+        Subscribe to User
+      </button>
     </div>
   );
 };

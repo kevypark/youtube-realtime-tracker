@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
-import YoutuberDescription from "./components/YoutuberDescription.jsx";
-import Search from "./components/Search.jsx";
-import Grid from "@material-ui/core/Grid";
+import Display from "./components/Display.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -19,9 +17,19 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    let bigYoutubers = [
+      "pewdiepie",
+      "corycotton",
+      "jakepaulproductions",
+      "tseries",
+      "MrBeast6000",
+      "ninjashyper"
+    ];
+    var randomYoutuber =
+      bigYoutubers[Math.floor(bigYoutubers.length * Math.random())];
     axios
       .get("/getYoutuberData", {
-        params: { username: "ricegum" }
+        params: { username: randomYoutuber }
       })
       .then(data => {
         console.log(data.data[0]);
@@ -30,7 +38,7 @@ class App extends React.Component {
           thumbnail: data.data[0].snippet.thumbnails.default.url,
           subscriberCount: data.data[0].statistics.subscriberCount,
           videoCount: data.data[0].statistics.videoCount,
-          customUrl: data.data[0].snippet.customUrl
+          customUrl: randomYoutuber
         });
       })
       .catch(err => {
@@ -55,7 +63,7 @@ class App extends React.Component {
     //     .catch(err => {
     //       console.log(err);
     //     });
-    // }, 10000);
+    // }, 3000);
   }
 
   handleSearchedYoutuber(entry) {
@@ -79,17 +87,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <Grid container justify="center" alignItems="center">
-        <div>
-          <YoutuberDescription
-            username={this.state.username}
-            thumbnail={this.state.thumbnail}
-            subscriberCount={this.state.subscriberCount}
-            videoCount={this.state.videoCount}
-          />
-          <Search handleSearchedYoutuber={this.handleSearchedYoutuber} />
-        </div>
-      </Grid>
+      <div>
+        <Display
+          username={this.state.username}
+          thumbnail={this.state.thumbnail}
+          subscriberCount={this.state.subscriberCount}
+          videoCount={this.state.videoCount}
+          handleSearchedYoutuber={this.handleSearchedYoutuber}
+          customUrl={this.state.customUrl}
+        />
+      </div>
     );
   }
 }

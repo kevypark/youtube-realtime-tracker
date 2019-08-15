@@ -7,7 +7,7 @@ app.use(parser.json());
 app.use(express.static(__dirname + "/../client/dist"));
 
 app.get("/getYoutuberData", (req, res) => {
-  getYoutuberData(req.query.username) 
+  getYoutuberData(req.query.username)
     .then(data => {
       res.send(data);
     })

@@ -1,4 +1,8 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Grid from "@material-ui/core/Grid";
+import Button from '@material-ui/core/Button';
 
 class Search extends React.Component {
   constructor(props) {
@@ -11,23 +15,36 @@ class Search extends React.Component {
   render() {
     return (
       <div>
-        <h4>Check Live YouTube Stats</h4>
+        <Typography variant="h6">Check Live YouTube Stats</Typography>
         <form
           onChange={e => {
             this.setState({ entry: e.target.value });
           }}
         >
-          <input type="text" placeholder="Type Any YouTuber's Username" />
-          <br />
-          <button
-            onClick={e => {
-              e.preventDefault();
-              console.log(this.state);
-              this.props.handleSearchedYoutuber(this.state.entry);
+          <TextField
+            type="text"
+            placeholder="Type Any YouTuber"
+            id="outlined-full-width"
+            style={{ margin: 8 }}
+            fullWidth
+            margin="normal"
+            variant="outlined"
+            InputLabelProps={{
+              shrink: true
             }}
-          >
-            Check
-          </button>
+          />
+          <br />
+          <Grid container justify="center" alignItems="center">
+            <Button
+            variant="contained"
+              onClick={e => {
+                e.preventDefault();
+                this.props.handleSearchedYoutuber(this.state.entry);
+              }}
+            >
+              Check
+            </Button>
+          </Grid>
         </form>
       </div>
     );
