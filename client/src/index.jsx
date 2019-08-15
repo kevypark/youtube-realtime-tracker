@@ -6,6 +6,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -40,8 +41,8 @@ class App extends React.Component {
         this.setState({
           username: data.data[0].snippet.title,
           thumbnail: data.data[0].snippet.thumbnails.default.url,
-          subscriberCount: data.data[0].statistics.subscriberCount,
-          videoCount: data.data[0].statistics.videoCount,
+          subscriberCount: parseInt(data.data[0].statistics.subscriberCount),
+          videoCount: parseInt(data.data[0].statistics.videoCount),
           customUrl: randomYoutuber
         });
       })
@@ -79,8 +80,8 @@ class App extends React.Component {
         this.setState({
           username: data.data[0].snippet.title,
           thumbnail: data.data[0].snippet.thumbnails.default.url,
-          subscriberCount: data.data[0].statistics.subscriberCount,
-          videoCount: data.data[0].statistics.videoCount,
+          subscriberCount: parseInt(data.data[0].statistics.subscriberCount),
+          videoCount: parseInt(data.data[0].statistics.videoCount),
           customUrl: entry
         });
       })
@@ -95,7 +96,7 @@ class App extends React.Component {
         <Container>
           <Header />
 
-          <div style={{ paddingTop: 30 }}>
+          <div style={{ paddingTop: 60 }}>
             <Grid container justify="center" alignItems="center">
               <Typography variant="h4" style={{ paddingBottom: 10 }}>
                 YouTube Subscriber Count
@@ -115,6 +116,7 @@ class App extends React.Component {
               customUrl={this.state.customUrl}
             />
           </div>
+          <Footer />
         </Container>
       </div>
     );

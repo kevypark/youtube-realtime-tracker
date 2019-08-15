@@ -4,6 +4,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import commaNumber from "comma-number";
 
 const useStyles = makeStyles({
   avatar: {
@@ -38,20 +39,17 @@ let YoutuberDescription = props => {
       </Grid>
       <Grid container justify="center" alignItems="center">
         <Typography variant="h3" style={{ paddingTop: 10, paddingBottom: 10 }}>
-          {props.subscriberCount}
+          {commaNumber(props.subscriberCount)}
         </Typography>
       </Grid>
       <Grid container justify="center" alignItems="center">
-        <Typography
-          variant="subtitle2"
-          style={{ paddingBottom: 10 }}
-        >
+        <Typography variant="subtitle2" style={{ paddingBottom: 10 }}>
           YouTube Subscribers
         </Typography>
       </Grid>
       <Grid container justify="center" alignItems="center">
         <Typography variant="h5" style={{ paddingTop: 10 }}>
-          {props.videoCount}
+          {commaNumber(props.videoCount)}
         </Typography>
       </Grid>
       <Grid container justify="center" alignItems="center">
