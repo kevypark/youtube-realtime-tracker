@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
 class Search extends React.Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class Search extends React.Component {
           <br />
           <Grid container justify="center" alignItems="center">
             <Button
-            variant="contained"
+              variant="contained"
               onClick={e => {
                 e.preventDefault();
                 this.props.handleSearchedYoutuber(this.state.entry);

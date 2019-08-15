@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
 import Display from "./components/Display.jsx";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Header from "./components/Header.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -63,7 +67,7 @@ class App extends React.Component {
     //     .catch(err => {
     //       console.log(err);
     //     });
-    // }, 3000);
+    // }, 2000);
   }
 
   handleSearchedYoutuber(entry) {
@@ -88,14 +92,30 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Display
-          username={this.state.username}
-          thumbnail={this.state.thumbnail}
-          subscriberCount={this.state.subscriberCount}
-          videoCount={this.state.videoCount}
-          handleSearchedYoutuber={this.handleSearchedYoutuber}
-          customUrl={this.state.customUrl}
-        />
+        <Container>
+          <Header />
+
+          <div style={{ paddingTop: 30 }}>
+            <Grid container justify="center" alignItems="center">
+              <Typography variant="h4" style={{ paddingBottom: 10 }}>
+                YouTube Subscriber Count
+              </Typography>
+            </Grid>
+            <Grid container justify="center" alignItems="center">
+              <Typography variant="subtitle2" style={{ paddingBottom: 10 }}>
+                Real-time count for YouTube Subscribers and media statistics
+              </Typography>
+            </Grid>
+            <Display
+              username={this.state.username}
+              thumbnail={this.state.thumbnail}
+              subscriberCount={this.state.subscriberCount}
+              videoCount={this.state.videoCount}
+              handleSearchedYoutuber={this.handleSearchedYoutuber}
+              customUrl={this.state.customUrl}
+            />
+          </div>
+        </Container>
       </div>
     );
   }

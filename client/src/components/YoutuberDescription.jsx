@@ -14,6 +14,9 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     maxWidth: 500
+  },
+  button: {
+    background: "#c4302b"
   }
 });
 
@@ -21,25 +24,54 @@ let YoutuberDescription = props => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Avatar
-        alt="Remy Sharp"
-        src={props.thumbnail}
-        className={classes.avatar}
-      />
-
-      <Typography variant="h5">{props.username}</Typography>
-      <Typography variant="h5">{props.subscriberCount}</Typography>
-      <Typography variant="h5">{props.videoCount}</Typography>
-
-      <button
-        onClick={() => {
-          window.location.href = `https://www.youtube.com/user/${
-            props.customUrl
-          }/`;
-        }}
-      >
-        Subscribe to User
-      </button>
+      <Grid container justify="center" alignItems="center">
+        <Avatar
+          alt="Youtuber"
+          src={props.thumbnail}
+          className={classes.avatar}
+        />
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Typography variant="h6" style={{ paddingBottom: 10 }}>
+          {props.username}
+        </Typography>
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Typography variant="h3" style={{ paddingTop: 10, paddingBottom: 10 }}>
+          {props.subscriberCount}
+        </Typography>
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Typography
+          variant="subtitle2"
+          style={{ paddingBottom: 10 }}
+        >
+          YouTube Subscribers
+        </Typography>
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Typography variant="h5" style={{ paddingTop: 10 }}>
+          {props.videoCount}
+        </Typography>
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Typography variant="body2" style={{ paddingBottom: 10 }}>
+          Videos
+        </Typography>
+      </Grid>
+      <Grid container justify="center" alignItems="center">
+        <Button
+          variant="contained"
+          className={classes.button}
+          onClick={() => {
+            window.location.href = `https://www.youtube.com/user/${
+              props.customUrl
+            }/`;
+          }}
+        >
+          Subscribe
+        </Button>
+      </Grid>
     </div>
   );
 };
