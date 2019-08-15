@@ -17,11 +17,15 @@ class Search extends React.Component {
       <div>
         <Typography variant="h6">Check Live YouTube Stats</Typography>
         <form
-          onChange={e => {
-            this.setState({ entry: e.target.value });
+          onSubmit={e => {
+            e.preventDefault();
+            this.props.handleSearchedYoutuber(this.state.entry);
           }}
         >
           <TextField
+            onChange={e => {
+              this.setState({ entry: e.target.value });
+            }}
             type="text"
             placeholder="Type Any YouTuber"
             id="outlined-full-width"
