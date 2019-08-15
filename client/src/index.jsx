@@ -42,7 +42,6 @@ class App extends React.Component {
         params: { username: randomYoutuber }
       })
       .then(data => {
-        console.log(data.data[0]);
         this.setState({
           username: data.data[0].snippet.title,
           thumbnail: data.data[0].snippet.thumbnails.default.url,
@@ -87,13 +86,11 @@ class App extends React.Component {
       });
 
     setInterval(() => {
-      console.log(this.state);
       axios
         .get("/getYoutuberData", {
           params: { username: this.state.customUrl }
         })
         .then(data => {
-          console.log(data.data[0]);
           this.setState({
             username: data.data[0].snippet.title,
             thumbnail: data.data[0].snippet.thumbnails.default.url,
