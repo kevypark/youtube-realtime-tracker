@@ -26,8 +26,8 @@ let YoutuberDescription = props => {
       />
 
       <Typography variant="h5">{props.username}</Typography>
-      <h4>{props.subscriberCount}</h4>
-      <h4>{props.videoCount}</h4>
+      <Typography variant="h5">{props.subscriberCount}</Typography>
+      <Typography variant="h5">{props.videoCount}</Typography>
     </div>
   );
 };
