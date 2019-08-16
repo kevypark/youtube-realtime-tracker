@@ -95,7 +95,7 @@ class App extends React.Component {
           this.setState({
             username: data.data[0].snippet.title,
             thumbnail: data.data[0].snippet.thumbnails.default.url,
-            subscriberCount: data.data[0].statistics.subscriberCount,
+            subscriberCount: parseInt(data.data[0].statistics.subscriberCount),
             oldSubscriberCount: this.state.subscriberCount,
             videoCount: data.data[0].statistics.videoCount,
             subscriberArr: [
