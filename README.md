@@ -2,10 +2,10 @@
 
 ## To build:
 ### For development:
-npm run dev_build
+npm run build-dev
 
 ### For production:
-npm run production_build
+npm run build-prod
 
 ## To start:
 npm start
