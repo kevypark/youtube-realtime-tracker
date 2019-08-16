@@ -16,7 +16,8 @@ class App extends React.Component {
     this.state = {
       username: "",
       thumbnail: "",
-      subscriberCount: "",
+      subscriberCount: 0,
+      oldSubscriberCount: 0,
       videoCount: "",
       customUrl: "",
       chartSetup: {},
@@ -95,6 +96,7 @@ class App extends React.Component {
             username: data.data[0].snippet.title,
             thumbnail: data.data[0].snippet.thumbnails.default.url,
             subscriberCount: data.data[0].statistics.subscriberCount,
+            oldSubscriberCount: this.state.subscriberCount,
             videoCount: data.data[0].statistics.videoCount,
             subscriberArr: [
               ...this.state.subscriberArr,
@@ -145,6 +147,7 @@ class App extends React.Component {
           username: data.data[0].snippet.title,
           thumbnail: data.data[0].snippet.thumbnails.default.url,
           subscriberCount: parseInt(data.data[0].statistics.subscriberCount),
+          oldSubscriberCount: 0,
           videoCount: parseInt(data.data[0].statistics.videoCount),
           customUrl: entry,
           chartSetup: {},
@@ -181,6 +184,7 @@ class App extends React.Component {
               videoCount={this.state.videoCount}
               handleSearchedYoutuber={this.handleSearchedYoutuber}
               customUrl={this.state.customUrl}
+              oldSubscriberCount={this.state.oldSubscriberCount}
             />
           </div>
           <br />

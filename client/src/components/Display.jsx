@@ -36,6 +36,7 @@ let Display = props => {
                 subscriberCount={props.subscriberCount}
                 videoCount={props.videoCount}
                 customUrl={props.customUrl}
+                oldSubscriberCount={props.oldSubscriberCount}
               />
             </div>
           </Grid>

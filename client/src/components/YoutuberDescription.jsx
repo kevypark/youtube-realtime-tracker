@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import commaNumber from "comma-number";
+import CountUp from "react-countup";
 
 const useStyles = makeStyles({
   avatar: {
@@ -38,8 +39,14 @@ let YoutuberDescription = props => {
         </Typography>
       </Grid>
       <Grid container justify="center" alignItems="center">
+        {" "}
         <Typography variant="h3" style={{ paddingTop: 10, paddingBottom: 10 }}>
-          {commaNumber(props.subscriberCount)}
+          <CountUp
+            start={props.oldSubscriberCount}
+            end={props.subscriberCount}
+            separator=","
+            delay={0}
+          />
         </Typography>
       </Grid>
       <Grid container justify="center" alignItems="center">

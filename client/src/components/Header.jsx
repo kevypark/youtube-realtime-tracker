@@ -42,9 +42,7 @@ let Header = props => {
             className={classes.button}
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={() => {
-              console.log("hi");
-            }}
+            onClick={() => {}}
           >
             Free Tools
           </Button>
@@ -53,9 +51,7 @@ let Header = props => {
             className={classes.button}
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={() => {
-              console.log("hi");
-            }}
+            onClick={() => {}}
           >
             Services
           </Button>
@@ -63,9 +59,7 @@ let Header = props => {
             className={classes.button}
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={() => {
-              console.log("hi");
-            }}
+            onClick={() => {}}
           >
             Blog
           </Button>
@@ -73,9 +67,7 @@ let Header = props => {
             className={classes.button}
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={() => {
-              console.log("hi");
-            }}
+            onClick={() => {}}
           >
             Support
           </Button>
@@ -83,9 +75,7 @@ let Header = props => {
             className={classes.button}
             aria-controls="simple-menu"
             aria-haspopup="true"
-            onClick={() => {
-              console.log("hi");
-            }}
+            onClick={() => {}}
           >
             Login
           </Button>
