@@ -10,7 +10,7 @@ npm run build-prod
 ## To start:
 npm start
 
-### note: API configuration
+### note: Youtube V3 API configuration
 https://console.developers.google.com/cloud-resource-manager
 
 
