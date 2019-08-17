@@ -11,8 +11,6 @@ npm run build-prod
 npm start
 
 ### note: API configuration
-config/config.example.js -> config/config.js
-<br/>
 https://console.developers.google.com/cloud-resource-manager
 
 
